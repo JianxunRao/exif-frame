@@ -22,15 +22,21 @@ class Photo {
    * const photo = await Photo.create(file);
    * ```
    */
-  public static async create(file: File): Promise<Photo> {
-    const photo = new Photo();
-    photo.file = file;
-    photo.metadata = new ExifMetadata(await load(file));
-    photo.image = new Image();
-    photo.image.src = URL.createObjectURL(file);
-    await new Promise((resolve) => (photo.image.onload = resolve));
-    photo.thumbnail = thumbnail(photo, 300, 250);
-    return photo;
+  public static async create(source: File| string): Promise<Photo> {
+      const photo = new Photo();
+      if (source instanceof File) {
+          photo.file = source;
+          photo.metadata = new ExifMetadata(await load(source));
+          photo.image = new Image();
+          photo.image.src = URL.createObjectURL(source);
+      } else if (typeof source === "string") {
+          photo.metadata = new ExifMetadata(await load(source));
+          photo.image = new Image();
+          photo.image.src = source;
+      }
+      await new Promise((resolve) => (photo.image.onload = resolve));
+      photo.thumbnail = thumbnail(photo, 300, 250);
+      return photo;
   }
 
   /**

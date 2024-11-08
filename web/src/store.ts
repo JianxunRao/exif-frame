@@ -9,8 +9,8 @@ type Store = {
   rerenderOptions: number;
   setRerenderOptions: () => void;
 
-  language: 'en' | 'ja' | 'ko';
-  setLanguage: (language: 'en' | 'ja' | 'ko') => void;
+  language: 'en' | 'ja' | 'ko' | 'zh';
+  setLanguage: (language: 'en' | 'ja' | 'ko' | 'zh') => void;
 
   darkMode: boolean;
   setDarkMode: (darkMode: boolean) => void;
@@ -116,8 +116,8 @@ const useStore = create<Store>((set) => ({
   rerenderOptions: 0,
   setRerenderOptions: () => set({ rerenderOptions: Math.random() }),
 
-  language: (localStorage.getItem('language') as 'en' | 'ja' | 'ko') || 'en',
-  setLanguage: (language: 'en' | 'ja' | 'ko') =>
+  language: (localStorage.getItem('language') as 'zh' |'en'| 'ja' | 'ko') || 'zh',
+  setLanguage: (language: 'zh'|'en' | 'ja' | 'ko' ) =>
     set(() => {
       localStorage.setItem('language', language);
       return { language };
@@ -214,7 +214,7 @@ const useStore = create<Store>((set) => ({
       return { overrideLensModel };
     }),
 
-  selectedThemeName: themes.find((theme) => theme.name === localStorage.getItem('selectedThemeName'))?.name || themes[0].name,
+  selectedThemeName: themes.find((theme) => theme.name === localStorage.getItem('selectedThemeName'))?.name || themes[3].name,
   setSelectedThemeName: (selectedThemeName: string) =>
     set(() => {
       localStorage.setItem('selectedThemeName', selectedThemeName);
@@ -247,7 +247,7 @@ const useStore = create<Store>((set) => ({
       return { watermark };
     }),
 
-  exportToJpeg: localStorage.getItem('exportToJpeg') === 'true',
+    exportToJpeg: (localStorage.getItem('exportToJpeg') || 'true') === 'true',
   setExportToJpeg: (exportToJpeg: boolean) =>
     set(() => {
       localStorage.setItem('exportToJpeg', exportToJpeg.toString());

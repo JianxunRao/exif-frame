@@ -15,6 +15,7 @@ import { TIP_FUNC, TIP_OPTIONS } from './13_TIP';
 import { POSTER_FUNC, POSTER_OPTIONS } from './14_POSTER';
 import { CINEMASCOPE_FUNC, CINEMASCOPE_OPTIONS } from './15_CINEMASCOPE';
 import { SIMPLE_FUNC, SIMPLE_OPTIONS } from './16_SIMPLE';
+import {BLUR_BACKGROUND_FUNC, BLUR_BACKGROUND_OPTIONS} from './17_BLUR_BACKGROUND';
 
 type AcceptInputType = string | number | boolean;
 
@@ -47,6 +48,7 @@ const themes = [
   { name: 'Just frame', func: JUST_FRAME_FUNC, options: JUST_FRAME_OPTIONS },
   { name: 'Simple', func: SIMPLE_FUNC, options: SIMPLE_OPTIONS },
   { name: 'Strap', func: STRAP_FUNC, options: STRAP_OPTIONS },
+    { name: 'Blur background', func: BLUR_BACKGROUND_FUNC, options: BLUR_BACKGROUND_OPTIONS },
   { name: 'One line', func: ONE_LINE_FUNC, options: ONE_LINE_OPTIONS },
   { name: 'Two line', func: TWO_LINE_FUNC, options: TWO_LINE_OPTIONS },
   { name: 'Shot on one line', func: SHOT_ON_ONE_LINE_FUNC, options: SHOT_ON_ONE_LINE_OPTIONS },

@@ -17,20 +17,14 @@ import SettingsIcon from '../../icons/settings.icon';
 import ImageIcon from '../../icons/image.icon';
 import GenerateIcon from '../../icons/generate.icon';
 import BugReportListItem from './components/bug-report.list-item';
-import SponsorListItem from './components/sponsor.list-item';
-import ReleasesListItem from './components/releases.list-item';
 import CurrentVersionListItem from './components/current-version.list-item';
 import FocalLength35mmModeListItem from './components/focal-length-35mm-mode.list-item';
 import DisableExposureMeterListItem from './components/disable-exposure-meter.list-item';
 import RatioPopover from './components/ratio.popover';
 import RatioListItem from './components/ratio.list-item';
 import TermAndConditionsListItem from './components/term-and-conditions.list-item';
-import PrivacyPolicyListItem from './components/privacy-policy.list-item';
 import { useStore } from '../../store';
-import SponsorKakaopayListItem from './components/sponsor-kakaopay.list-item';
-import SponsorsListItem from './components/sponsors.list-item';
 import FocalLengthRatioModeListItem from './components/focal-length-ratio-mode.list-item';
-import LabListItem from './components/lab.list-item';
 import DateNotationListItem from './components/date-notation.list-item';
 import DateNotationPopover from './components/date-notation.popover';
 
@@ -73,22 +67,21 @@ const ExportSettingsPage = () => {
 
       <List strongIos inset>
         <BugReportListItem />
-        <ReleasesListItem />
       </List>
 
-      <List strongIos inset>
-        <SponsorListItem />
-        <SponsorKakaopayListItem />
-        <SponsorsListItem />
-      </List>
+      {/*<List strongIos inset>*/}
+        {/*<SponsorListItem />*/}
+        {/*<SponsorKakaopayListItem />*/}
+        {/*<SponsorsListItem />*/}
+      {/*</List>*/}
 
       <List strongIos inset>
-        <PrivacyPolicyListItem />
+        {/*<PrivacyPolicyListItem />*/}
         <TermAndConditionsListItem />
       </List>
 
       <List strongIos inset>
-        <LabListItem />
+        {/*<LabListItem />*/}
         <CurrentVersionListItem />
       </List>
 

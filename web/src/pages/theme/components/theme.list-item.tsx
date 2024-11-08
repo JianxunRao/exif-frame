@@ -7,7 +7,7 @@ interface ThemeListItemProps {
 }
 
 const ThemeListItem = ({ name }: ThemeListItemProps) => {
-  const { selectedThemeName, setSelectedThemeName } = useStore();
+  const { selectedThemeName, setSelectedThemeName, setRerenderOptions } = useStore();
   const { clearOption } = useThemeStore();
 
   return (
@@ -20,6 +20,7 @@ const ThemeListItem = ({ name }: ThemeListItemProps) => {
           onChange={() => {
             clearOption();
             setSelectedThemeName(name);
+            setRerenderOptions();
           }}
         />
       }
