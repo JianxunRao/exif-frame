@@ -21,8 +21,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={t(props.id)}
-          info={t(props.description)}
+          title={t(props.id || '')}
+          info={t(props.description || '')}
           value={value}
           onChange={(e) => {
             const value = e.target.value;
@@ -36,8 +36,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={t(props.id)}
-          info={t(props.description)}
+          title={t(props.id || '')}
+          info={t(props.description || '')}
           value={value}
           onChange={(e) => {
             const value = e.target.value;
@@ -49,10 +49,10 @@ const ThemeOptionListInput = (props: ThemeOption) => {
 
       {props.type === 'color' && (
         <ListInput
-          info={t(props.description)}
+          info={t(props.description || '')}
           key={props.id}
           name={props.id}
-          title={t(props.id)}
+          title={t(props.id || '')}
           media={<div className="w-5 h-5" style={{ backgroundColor: value as string, outline: `1px solid ${darkMode ? '#fff' : '#000'}` }} />}
           value={value}
           onChange={(e) => {
@@ -67,8 +67,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={t(props.id)}
-          info={t(props.description)}
+          title={t(props.id || '')}
+          info={t(props.description || '')}
           value={value}
           type="select"
           onChange={(e) => {
@@ -89,7 +89,7 @@ const ThemeOptionListInput = (props: ThemeOption) => {
       {props.type === 'range-slider' && (
         <ListItem
           key={props.id}
-          title={t(props.id)}
+          title={t(props.id || '')}
           innerChildren={
             <div className="flex space-x-4 rtl:space-x-reverse">
               <span>{value}</span>
@@ -112,8 +112,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
       {props.type === 'boolean' && (
         <ListItem
           key={props.id}
-          title={t(props.id)}
-          footer={props.description}
+          title={t(props.id || '')}
+          footer={props.description || ''}
           after={
             <Toggle
               key={props.id}
