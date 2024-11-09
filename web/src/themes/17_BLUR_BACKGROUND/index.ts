@@ -58,7 +58,7 @@ const BLUR_BACKGROUND_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, 
     const blurredCanvas = document.createElement('canvas');
     blurredCanvas.width = canvas.width;
     blurredCanvas.height = canvas.height;
-    const blurredContext = blurredCanvas.getContext('2d');
+    const blurredContext = blurredCanvas.getContext('2d')!;
 
     // 绘制模糊背景
     blurredContext.filter = 'blur(100px)';

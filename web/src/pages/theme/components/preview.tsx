@@ -8,7 +8,7 @@ import free from '../../../core/drawing/free';
 import Photo from "../../../core/photo";
 import sample_pic from "../../../utils/DSC05180.jpg"
 
-let sampleImage = null;
+let sampleImage: Photo | null = null;
 
 async function loadSampleImage() {
     if (sampleImage == null) {
@@ -52,7 +52,7 @@ const Preview = () => {
     });
 
     const func = theme?.func;
-    new Promise((resolve)=>{
+    new Promise<Photo>((resolve)=>{
         console.log("Promise:")
         //todo 如果未导入照片，则用默认示例照片进行样式展示
         if (store.photos.length === 0){
