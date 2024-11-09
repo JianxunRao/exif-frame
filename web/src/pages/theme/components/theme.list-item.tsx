@@ -5,15 +5,17 @@ import { useThemeStore } from '../../../themes';
 interface ThemeListItemProps {
   name: string;
 }
+import { useTranslation } from 'react-i18next';
 
 const ThemeListItem = ({ name }: ThemeListItemProps) => {
   const { selectedThemeName, setSelectedThemeName, setRerenderOptions } = useStore();
   const { clearOption } = useThemeStore();
+    const {t} = useTranslation();
 
-  return (
+    return (
     <ListItem
       label
-      title={name}
+      title={t(name)}
       media={
         <Radio
           checked={selectedThemeName === name}

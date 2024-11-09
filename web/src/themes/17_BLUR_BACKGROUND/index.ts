@@ -7,32 +7,14 @@ import Font from '../../fonts';
 
 const BLUR_BACKGROUND_OPTIONS: ThemeOption[] = [
 
-    {id: 'TEXT_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black'},
-    {
-        id: 'TEXT_ALIGN',
-        type: 'select',
-        options: ['center', 'right', 'left'],
-        default: 'center',
-        description: 'left or center or right'
-    },
-    {
-        id: 'FONT_STYLE',
-        type: 'select',
-        options: ['normal', 'italic'],
-        default: 'normal',
-        description: 'normal or italic'
-    },
-    {id: 'FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900'},
-    {id: 'FONT_SIZE', type: 'number', default: 80, description: 'px'},
-    {
-        id: 'FONT_FAMILY',
-        type: 'select',
-        options: ['Barlow', ...Object.values(Font)],
-        default: 'Barlow',
-        description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif'
-    },
-    {id: 'TOP_LABEL', type: 'string', default: '', description: 'ex. @username'},
-    {id: 'DIVIDER', type: 'string', default: '|', description: 'ex. ∙'},
+    { id: 'TEXT_COLOR', type: 'color', default: '#ffffff', description: '#ffffff is white, #000000 is black'},
+    { id: 'TEXT_ALIGN', type: 'select', options: ['center', 'right', 'left'], default: 'center', description: 'left or center or right'},
+    { id: 'FONT_STYLE', type: 'select', options: ['normal', 'italic'], default: 'normal', description: 'normal or italic'},
+    { id: 'FONT_WEIGHT', type: 'range-slider', min: 100, max: 900, step: 100, default: 300, description: '100 - 900'},
+    { id: 'FONT_SIZE', type: 'number', default: 80, description: 'px'},
+    { id: 'FONT_FAMILY', type: 'select', options: ['Barlow', ...Object.values(Font)], default: 'Barlow', description: 'ex. din-alternate-bold, digital-7, Barlow, Arial, sans-serif'},
+    { id: 'TOP_LABEL', type: 'string', default: '', description: 'ex. @username'},
+    { id: 'DIVIDER', type: 'string', default: '|', description: 'ex. ∙'},
 ];
 
 const BLUR_BACKGROUND_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Store) => {

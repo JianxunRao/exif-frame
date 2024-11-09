@@ -3,10 +3,12 @@ import { useEffect, useState } from 'react';
 import { useStore } from '../../../store';
 import Customize from '../database/customize';
 import { ThemeOption, getConverter } from '../types/theme-option';
+import { useTranslation } from 'react-i18next';
 
 const ThemeOptionListInput = (props: ThemeOption) => {
   const { selectedThemeName, rerenderOptions, darkMode } = useStore();
   const [value, setValue] = useState(Customize.get(selectedThemeName, props.id, getConverter(props.type)) ?? props.default);
+    const {t} = useTranslation();
 
   useEffect(() => {
     setValue(Customize.get(selectedThemeName, props.id, getConverter(props.type)) ?? props.default);
@@ -19,8 +21,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={props.id}
-          info={props.description}
+          title={t(props.id)}
+          info={t(props.description)}
           value={value}
           onChange={(e) => {
             const value = e.target.value;
@@ -34,8 +36,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={props.id}
-          info={props.description}
+          title={t(props.id)}
+          info={t(props.description)}
           value={value}
           onChange={(e) => {
             const value = e.target.value;
@@ -47,10 +49,10 @@ const ThemeOptionListInput = (props: ThemeOption) => {
 
       {props.type === 'color' && (
         <ListInput
-          info={props.description}
+          info={t(props.description)}
           key={props.id}
           name={props.id}
-          title={props.id}
+          title={t(props.id)}
           media={<div className="w-5 h-5" style={{ backgroundColor: value as string, outline: `1px solid ${darkMode ? '#fff' : '#000'}` }} />}
           value={value}
           onChange={(e) => {
@@ -65,8 +67,8 @@ const ThemeOptionListInput = (props: ThemeOption) => {
         <ListInput
           key={props.id}
           name={props.id}
-          title={props.id}
-          info={props.description}
+          title={t(props.id)}
+          info={t(props.description)}
           value={value}
           type="select"
           onChange={(e) => {
@@ -87,7 +89,7 @@ const ThemeOptionListInput = (props: ThemeOption) => {
       {props.type === 'range-slider' && (
         <ListItem
           key={props.id}
-          title={props.id}
+          title={t(props.id)}
           innerChildren={
             <div className="flex space-x-4 rtl:space-x-reverse">
               <span>{value}</span>
@@ -110,7 +112,7 @@ const ThemeOptionListInput = (props: ThemeOption) => {
       {props.type === 'boolean' && (
         <ListItem
           key={props.id}
-          title={props.id}
+          title={t(props.id)}
           footer={props.description}
           after={
             <Toggle
