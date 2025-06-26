@@ -46,6 +46,46 @@ supportLogo.set('SIGMA_LIGHT', loadLogo('/maker/light/sigma.png'));
 supportLogo.set('SIGMA_DARK', loadLogo('/maker/dark/sigma.png'));
 supportLogo.set('SONY_LIGHT', loadLogo('/maker/light/sony.png'));
 supportLogo.set('SONY_DARK', loadLogo('/maker/dark/sony.png'));
+supportLogo.set('BLACKMAGIC_LIGHT', loadLogo('/maker/light/blackmagic.png'));
+supportLogo.set('BLACKMAGIC_DARK', loadLogo('/maker/dark/blackmagic.png'));
+supportLogo.set('GOPRO_LIGHT', loadLogo('/maker/light/gopro.png'));
+supportLogo.set('GOPRO_DARK', loadLogo('/maker/dark/gopro.png'));
+supportLogo.set('HUAWEI_LIGHT', loadLogo('/maker/light/huawei.png'));
+supportLogo.set('HUAWEI_DARK', loadLogo('/maker/dark/huawei.png'));
+supportLogo.set('INSTA360_LIGHT', loadLogo('/maker/light/insta360.png'));
+supportLogo.set('INSTA360_DARK', loadLogo('/maker/dark/insta360.png'));
+supportLogo.set('KODAK_LIGHT', loadLogo('/maker/light/kodak.png'));
+supportLogo.set('KODAK_DARK', loadLogo('/maker/dark/kodak.png'));
+supportLogo.set('ONEPLUS_LIGHT', loadLogo('/maker/light/oneplus.png'));
+supportLogo.set('ONEPLUS_DARK', loadLogo('/maker/dark/oneplus.png'));
+supportLogo.set('POLAROID_LIGHT', loadLogo('/maker/light/polaroid.png'));
+supportLogo.set('POLAROID_DARK', loadLogo('/maker/dark/polaroid.png'));
+supportLogo.set('RED_LIGHT', loadLogo('/maker/light/red.png'));
+supportLogo.set('RED_DARK', loadLogo('/maker/dark/red.png'));
+supportLogo.set('ZEISS_LIGHT', loadLogo('/maker/light/zeiss.png'));
+supportLogo.set('ZEISS_DARK', loadLogo('/maker/dark/zeiss.png'));
+supportLogo.set('XIAOMI_LIGHT', loadLogo('/maker/light/xiaomi.png'));
+supportLogo.set('XIAOMI_DARK', loadLogo('/maker/dark/xiaomi.png'));
+supportLogo.set('VIVO_LIGHT', loadLogo('/maker/light/vivo.png'));
+supportLogo.set('VIVO_DARK', loadLogo('/maker/dark/vivo.png'));
+supportLogo.set('OPPO_LIGHT', loadLogo('/maker/light/oppo.png'));
+supportLogo.set('OPPO_DARK', loadLogo('/maker/dark/oppo.png'));
+supportLogo.set('HONOR_LIGHT', loadLogo('/maker/light/honor.png'));
+supportLogo.set('HONOR_DARK', loadLogo('/maker/dark/honor.png'));
+supportLogo.set('MOTOROLA_LIGHT', loadLogo('/maker/light/motorola.png'));
+supportLogo.set('MOTOROLA_DARK', loadLogo('/maker/dark/motorola.png'));
+supportLogo.set('NOKIA_LIGHT', loadLogo('/maker/light/nokia.png'));
+supportLogo.set('NOKIA_DARK', loadLogo('/maker/dark/nokia.png'));
+supportLogo.set('NUBIA_LIGHT', loadLogo('/maker/light/nubia.png'));
+supportLogo.set('NUBIA_DARK', loadLogo('/maker/dark/nubia.png'));
+supportLogo.set('OM_LIGHT', loadLogo('/maker/light/om.png'));
+supportLogo.set('OM_DARK', loadLogo('/maker/dark/om.png'));
+supportLogo.set('REALME_LIGHT', loadLogo('/maker/light/realme.png'));
+supportLogo.set('REALME_DARK', loadLogo('/maker/dark/realme.png'));
+supportLogo.set('GOOGLE_LIGHT', loadLogo('/maker/light/google.png'));
+supportLogo.set('GOOGLE_DARK', loadLogo('/maker/dark/google.png'));
+supportLogo.set('GOLDSTAR_LIGHT', loadLogo('/maker/light/goldstar.png'));
+supportLogo.set('GOLDSTAR_DARK', loadLogo('/maker/dark/goldstar.png'));
 
 const STRAP_OPTIONS: ThemeOption[] = [
   { id: 'ARTIST', type: 'string', default: '', description: 'your name' },
@@ -213,6 +253,86 @@ const STRAP_FUNC: ThemeFunc = (photo: Photo, input: ThemeOptionInput, store: Sto
   if (photo.metadata.make?.toUpperCase().includes('SAMSUNG') || photo.metadata.model?.toUpperCase().includes('SAMSUNG')) {
     logo = DARK_MODE ? supportLogo.get('SAMSUNG_DARK') : supportLogo.get('SAMSUNG_LIGHT');
   }
+
+	if (photo.metadata.make?.toUpperCase().includes('OM') || photo.metadata.model?.toUpperCase().includes('OM')) {
+		logo = DARK_MODE ? supportLogo.get('OM_DARK') : supportLogo.get('OM_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('BLACKMAGIC') || photo.metadata.model?.toUpperCase().includes('BLACKMAGIC')) {
+		logo = DARK_MODE ? supportLogo.get('BLACKMAGIC_DARK') : supportLogo.get('BLACKMAGIC_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('GOPRO') || photo.metadata.model?.toUpperCase().includes('GOPRO')) {
+		logo = DARK_MODE ? supportLogo.get('GOPRO_DARK') : supportLogo.get('GOPRO_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('HUAWEI') || photo.metadata.model?.toUpperCase().includes('HUAWEI')) {
+		logo = DARK_MODE ? supportLogo.get('HUAWEI_DARK') : supportLogo.get('HUAWEI_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('INSTA360') || photo.metadata.model?.toUpperCase().includes('INSTA360')) {
+		logo = DARK_MODE ? supportLogo.get('INSTA360_DARK') : supportLogo.get('INSTA360_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('KODAK') || photo.metadata.model?.toUpperCase().includes('KODAK')) {
+		logo = DARK_MODE ? supportLogo.get('KODAK_DARK') : supportLogo.get('KODAK_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('ONEPLUS') || photo.metadata.model?.toUpperCase().includes('ONEPLUS')) {
+		logo = DARK_MODE ? supportLogo.get('ONEPLUS_DARK') : supportLogo.get('ONEPLUS_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('POLAROID') || photo.metadata.model?.toUpperCase().includes('POLAROID')) {
+		logo = DARK_MODE ? supportLogo.get('POLAROID_DARK') : supportLogo.get('POLAROID_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('RED') || photo.metadata.model?.toUpperCase().includes('RED')) {
+		logo = DARK_MODE ? supportLogo.get('RED_DARK') : supportLogo.get('RED_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('ZEISS') || photo.metadata.model?.toUpperCase().includes('ZEISS')) {
+		logo = DARK_MODE ? supportLogo.get('ZEISS_DARK') : supportLogo.get('ZEISS_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('XIAOMI') || photo.metadata.model?.toUpperCase().includes('XIAOMI')) {
+		logo = DARK_MODE ? supportLogo.get('XIAOMI_DARK') : supportLogo.get('XIAOMI_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('VIVO') || photo.metadata.model?.toUpperCase().includes('VIVO')) {
+		logo = DARK_MODE ? supportLogo.get('VIVO_DARK') : supportLogo.get('VIVO_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('OPPO') || photo.metadata.model?.toUpperCase().includes('OPPO')) {
+		logo = DARK_MODE ? supportLogo.get('OPPO_DARK') : supportLogo.get('OPPO_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('HONOR') || photo.metadata.model?.toUpperCase().includes('HONOR')) {
+		logo = DARK_MODE ? supportLogo.get('HONOR_DARK') : supportLogo.get('HONOR_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('MOTOROLA') || photo.metadata.model?.toUpperCase().includes('MOTOROLA')) {
+		logo = DARK_MODE ? supportLogo.get('MOTOROLA_DARK') : supportLogo.get('MOTOROLA_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('NOKIA') || photo.metadata.model?.toUpperCase().includes('NOKIA')) {
+		logo = DARK_MODE ? supportLogo.get('NOKIA_DARK') : supportLogo.get('NOKIA_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('NUBIA') || photo.metadata.model?.toUpperCase().includes('NUBIA')) {
+		logo = DARK_MODE ? supportLogo.get('NUBIA_DARK') : supportLogo.get('NUBIA_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('REALME') || photo.metadata.model?.toUpperCase().includes('REALME')) {
+		logo = DARK_MODE ? supportLogo.get('REALME_DARK') : supportLogo.get('REALME_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('GOOGLE') || photo.metadata.model?.toUpperCase().includes('GOOGLE')) {
+		logo = DARK_MODE ? supportLogo.get('GOOGLE_DARK') : supportLogo.get('GOOGLE_LIGHT');
+	}
+
+	if (photo.metadata.make?.toUpperCase().includes('GOLDSTAR') || photo.metadata.model?.toUpperCase().includes('GOLDSTAR')) {
+		logo = DARK_MODE ? supportLogo.get('GOLDSTAR_DARK') : supportLogo.get('GOLDSTAR_LIGHT');
+	}
 
   if (logo) {
     let LOGO_WIDTH = (logo.width / logo.height) * TARGET_LOGO_HEIGHT;
