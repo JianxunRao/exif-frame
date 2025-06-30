@@ -154,6 +154,8 @@
   "TEXT4_WEIGHT": "Text 4 Weight",
   "TEXT5_SIZE": "Text 5 Size",
   "TEXT5_WEIGHT": "Text 5 Weight",
+  "USE_CUSTOM_LOGO": "Use custom Logo",
+  "CUSTOM_LOGO_IMAGE": "Custom Logo image",
 
   "#ffffff is white, #000000 is black": "#ffffff is white, #000000 is black",
   "px": "px",
@@ -171,5 +173,8 @@
   "enable to reduce exif text width": "Enable to reduce EXIF text width",
   "ex. Hello, World!": "e.g., Hello, World!",
   "hide text": "Hide text",
-  "0 ~ 100": "0 ~ 100"
+  "0 ~ 100": "0 ~ 100",
+  "custom Logo": "custom Logo",
+  "upload Logo": "upload Logo",
+  "After modifying the custom settings, click the button to refresh the preview": "After modifying the custom settings, click the button to refresh the preview."
 }
