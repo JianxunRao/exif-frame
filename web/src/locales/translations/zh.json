@@ -118,7 +118,7 @@
   "FONT_FAMILY": "字体",
   "TOP_LABEL": "顶部标签",
   "DIVIDER": "分隔符",
-  "ARTIST": "艺术家",
+  "ARTIST": "作者",
   "DARK_MODE": "暗黑模式",
   "SECONDARY_TEXT_FONT_WEIGHT": "副文字体粗细",
   "COMPACT": "紧凑模式",
@@ -154,6 +154,8 @@
   "TEXT4_WEIGHT": "文字 4 粗细",
   "TEXT5_SIZE": "文字 5 大小",
   "TEXT5_WEIGHT": "文字 5 粗细",
+  "USE_CUSTOM_LOGO": "使用自定义Logo",
+  "CUSTOM_LOGO_IMAGE": "自定义Logo",
 
   "#ffffff is white, #000000 is black": "#ffffff表示白色，#000000表示黑色",
   "px": "像素",
@@ -171,5 +173,8 @@
   "enable to reduce exif text width": "启用以减少EXIF文本宽度",
   "ex. Hello, World!": "例如：你好，世界！",
   "hide text": "隐藏文字",
-  "0 ~ 100": "0 ~ 100"
+  "0 ~ 100": "0 ~ 100",
+  "custom Logo": "使用自定义Logo",
+  "upload Logo": "上传自定义Logo",
+  "After modifying the custom settings, click the button to refresh the preview": "修改自定义设置后，点击按钮刷新预览"
 }

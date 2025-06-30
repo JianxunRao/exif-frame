@@ -32,9 +32,16 @@ type ColorOption = {
   default: string;
 };
 
-type ThemeOption = (StringOption | NumberOption | BooleanOption | SelectOption | RangeSliderOption | ColorOption) & {
-  id: string;
-  description?: string;
+type ImageUploadOption = {
+	type: 'image-upload';
+	default: string; // 存储图片URL或base64
+};
+
+type ThemeOption =
+	(StringOption | NumberOption | BooleanOption | SelectOption | RangeSliderOption | ColorOption | ImageUploadOption)
+	& {
+	id: string;
+	description?: string;
 };
 
 type ThemeOptionInput = Map<string, string | number | boolean>;
@@ -44,6 +51,7 @@ const getConverter = (type: string): typeof String | typeof Number | typeof Bool
     case 'string':
     case 'select':
     case 'color':
+    	case 'image-upload':
       return String;
 
     case 'number':

@@ -22,8 +22,11 @@ const ThemeSettingsPage = () => {
       <Navbar large transparent title={t('root.themes')} />
 
       <Preview />
-      <div className="flex justify-center mt-4">
+      <div className="flex flex-col items-center mt-4 space-y-2">
         <RerenderButton />
+		  <div className="text-xs text-gray-500">
+		  {t('After modifying the custom settings, click the button to refresh the preview')}
+		  </div>
       </div>
 
       <BlockTitle>{t('root.themes.list')}</BlockTitle>

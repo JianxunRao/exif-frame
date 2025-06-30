@@ -1,19 +1,41 @@
 import { ListInput, ListItem, Range, Toggle } from 'konsta/react';
-import { useEffect, useState } from 'react';
+import {useEffect, useState, useRef} from 'react';
 import { useStore } from '../../../store';
 import Customize from '../database/customize';
 import { ThemeOption, getConverter } from '../types/theme-option';
 import { useTranslation } from 'react-i18next';
+import AddIcon from '../../../icons/add.icon';
 
 const ThemeOptionListInput = (props: ThemeOption) => {
   const { selectedThemeName, rerenderOptions, darkMode } = useStore();
   const [value, setValue] = useState(Customize.get(selectedThemeName, props.id, getConverter(props.type)) ?? props.default);
     const {t} = useTranslation();
+	const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     setValue(Customize.get(selectedThemeName, props.id, getConverter(props.type)) ?? props.default);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedThemeName, rerenderOptions]);
+
+	const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+		const file = e.target.files?.[0];
+		if (!file) return;
+
+		// 简单校验图片类型
+		if (!file.type.startsWith('image/')) {
+			alert(t('error.invalidImageType'));
+			return;
+		}
+
+		// 转换为base64
+		const reader = new FileReader();
+		reader.onload = (event) => {
+			const base64 = event.target?.result as string;
+			Customize.set(selectedThemeName, props.id, base64);
+			setValue(base64);
+		};
+		reader.readAsDataURL(file);
+	};
 
   return (
     <>
@@ -126,6 +148,45 @@ const ThemeOptionListInput = (props: ThemeOption) => {
           }
         />
       )}
+
+		{props.type === 'image-upload' && (
+			<ListItem
+				key={props.id}
+				title={t(props.id || '')}
+				footer={t(props.description || '')}
+				after={
+					<div className="flex items-center space-x-2 rtl:space-x-reverse">
+						{value && (
+							<div
+								className="w-8 h-8 rounded-full overflow-hidden border"
+								style={{ borderColor: darkMode ? '#fff' : '#000' }}
+								onClick={() => fileInputRef.current?.click()}
+							>
+								<img
+									src={value as string}
+									alt="Logo预览"
+									className="w-full h-full object-contain"
+								/>
+							</div>
+						)}
+						<button
+							type="button"
+							className="p-1"
+							onClick={() => fileInputRef.current?.click()}
+						>
+							<AddIcon size={42} />
+						</button>
+						<input
+							type="file"
+							ref={fileInputRef}
+							accept="image/*"
+							className="hidden"
+							onChange={handleImageUpload}
+						/>
+					</div>
+				}
+			/>
+		)}
     </>
   );
 };
